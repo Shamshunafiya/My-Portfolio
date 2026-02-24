@@ -8,6 +8,7 @@ const projects = [
     description: "Designed a WhatsApp clone using Figma. Created user-friendly chat screens and smooth navigation flow. Focused on usability, responsiveness, and interaction. Improved my design and prototyping skills.",
     image: "https://images.unsplash.com/photo-1646766677899-9c1750e28b0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGF0c2FwcCUyMG1vYmlsZSUyMGNoYXR8ZW58MXx8fHwxNzYzNzA1MTA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     tools: ["Figma", "UI/UX Design", "Prototyping"],
+    figmaLink: "https://www.figma.com/proto/ZpZ2rgESRkRqk9WNJ5K0fo/Untitled?page-id=34%3A2&node-id=34-3&viewport=51%2C220%2C0.09&t=YAl14iKHiT3UTxjq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A4&show-proto-sidebar=1", 
     highlights: [
       "User-friendly chat screens",
       "Smooth navigation flow",
@@ -20,6 +21,7 @@ const projects = [
     description: "Designed a complete Food App layout based on my own creative ideas. Included menu layout, order process, and user-friendly interface. Improved design thinking and problem-solving skills.",
     image: "https://images.unsplash.com/photo-1729860649884-40ec104f9dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZGVsaXZlcnklMjBhcHB8ZW58MXx8fHwxNzYzNjI2Nzk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     tools: ["Figma", "Design Thinking", "User Flow"],
+    figmaLink: "https://www.figma.com/proto/PyzErY0r5XPy1Pqb3OqMq1/Untitled?page-id=0%3A1&node-id=30-2&viewport=280%2C512%2C0.13&t=INcHMwVXKHemmWye-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=30%3A2", 
     highlights: [
       "Complete menu layout",
       "Order process design",
@@ -32,8 +34,9 @@ const projects = [
     description: "Created a fully responsive anime-themed website showcasing posters and banners for anime lovers. The website includes animated poster cards, featured seals, and smooth micro-interactions to enhance the user experience.",
     image: "https://images.unsplash.com/photo-1643560413634-edc1135c7e4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmltZSUyMHBvc3RlciUyMGFydHxlbnwxfHx8fDE3NjM2OTUxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     tools: ["Figma", "HTML", "CSS", "Animation"],
-    highlights: [
-      "Fully responsive design",
+    figmaLink: "https://www.figma.com/proto/FUOOTc0NNUUx2vTFY1nrRZ/Untitled?page-id=123%3A52&node-id=181-105&viewport=-743%2C-248%2C0.24&t=RLtLMbe2pMjXnPES-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=181%3A105&show-proto-sidebar=1", 
+    highlights: [  
+    "Fully responsive design",
       "Animated poster cards",
       "Smooth micro-interactions",
       "Anime-themed aesthetics"
@@ -113,14 +116,19 @@ export function ProjectsSection() {
                   </div>
 
                   {/* View Link */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
-                  >
-                    <span>View Design</span>
-                    <ExternalLink size={16} />
-                  </motion.button>
+                  {project.figmaLink && (
+                    <motion.a
+                      href={project.figmaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
+                    >
+                      <span>View Design</span>
+                      <ExternalLink size={16} />
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>
